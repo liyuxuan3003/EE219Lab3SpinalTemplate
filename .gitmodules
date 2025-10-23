@@ -1,4 +1,4 @@
 [submodule "MakefileSpinal"]
 	path = SpinalSulfur/makefile-spinal
 	url = git@Lithium:Hardware/MakefileSpinal.git
-	branch = master
+	branch = dev
