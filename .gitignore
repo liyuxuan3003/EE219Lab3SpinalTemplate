@@ -1,0 +1,6 @@
+.vscode
+.metals
+.bloop
+project
+target
+build
