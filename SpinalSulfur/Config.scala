@@ -5,12 +5,12 @@ import spinal.core.sim._
 
 object Config {
   def spinal = SpinalConfig(
-    targetDirectory = "SpinalSulfur/build",
+    targetDirectory = "build/hw",
     defaultConfigForClockDomains = ClockDomainConfig(
       resetActiveLevel = HIGH
     ),
     onlyStdLogicVectorAtTopLevelIo = false
   )
 
-  def sim = SimConfig.withConfig(spinal).withFstWave
+  def sim = SimConfig.withConfig(spinal).workspacePath("build/sim").withFstWave
 }
