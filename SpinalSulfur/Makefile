@@ -1,5 +1,5 @@
 PROJECT:=SpinalSulfur
 
-TOP:=MyTopLevel
+TOP:=TopLevel
 
 include makefile-spinal/makefile-spinal.mk

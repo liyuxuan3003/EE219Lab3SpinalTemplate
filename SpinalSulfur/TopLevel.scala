@@ -3,7 +3,7 @@ package SpinalSulfur
 import spinal.core._
 
 // Hardware definition
-case class MyTopLevel() extends Component {
+case class TopLevel() extends Component {
   val io = new Bundle {
     val cond0 = in  Bool()
     val cond1 = in  Bool()
@@ -21,10 +21,10 @@ case class MyTopLevel() extends Component {
   io.flag := (counter === 0) | io.cond1
 }
 
-object MyTopLevelVerilog extends App {
-  Config.spinal.generateVerilog(MyTopLevel())
+object TopLevelVerilog extends App {
+  Config.spinal.generateVerilog(TopLevel())
 }
 
-object MyTopLevelVhdl extends App {
-  Config.spinal.generateVhdl(MyTopLevel())
+object TopLevelVhdl extends App {
+  Config.spinal.generateVhdl(TopLevel())
 }
