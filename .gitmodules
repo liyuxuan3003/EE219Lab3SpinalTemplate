@@ -2,3 +2,7 @@
 	path = SpinalSulfur/makefile-spinal
 	url = git@Lithium:Hardware/MakefileSpinal.git
 	branch = dev
+[submodule "MagicLeda"]
+	path = SpinalSulfur/magicleda
+	url = git@Lithium:Hardware/MagicLeda.git
+	branch = dev
