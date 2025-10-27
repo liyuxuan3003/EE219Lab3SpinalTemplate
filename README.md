@@ -1,0 +1,3 @@
+# SpinalSulfurTemplate
+
+SpinalSulfurTemplate是一个适用于SpinalHDL项目的模板，集成了从SpinalHDL到Verilog的编译和调用Vivado综合上板的功能。
