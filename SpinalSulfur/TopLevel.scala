@@ -1,24 +1,21 @@
 package SpinalSulfur
 
 import spinal.core._
+import spinal.core.sim._
+import spinal.lib._
 
-// Hardware definition
 case class TopLevel() extends Component {
   val io = new Bundle {
-    val cond0 = in  Bool()
-    val cond1 = in  Bool()
-    val flag  = out Bool()
-    val state = out UInt(8 bits)
+    // ...
   }
 
-  val counter = Reg(UInt(8 bits)) init 0
+}
 
-  when(io.cond0) {
-    counter := counter + 1
+object TopLevelSim extends App {
+  Config.sim.compile(TopLevel()).doSim { dut =>
+    dut.clockDomain.forkStimulus(period = 10, resetCycles = 10)
+
   }
-
-  io.state := counter
-  io.flag := (counter === 0) | io.cond1
 }
 
 object TopLevelVerilog extends App {
