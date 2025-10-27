@@ -1,8 +1,8 @@
 [submodule "MakefileSpinal"]
 	path = SpinalSulfur/makefile-spinal
-	url = git@Lithium:Hardware/MakefileSpinal.git
+	url = git@github.com:liyuxuan3003/MakefileSpinal.git
 	branch = master
 [submodule "MagicLeda"]
 	path = SpinalSulfur/magicleda
-	url = git@Lithium:Hardware/MagicLeda.git
+	url = git@github.com:liyuxuan3003/MagicLeda.git
 	branch = master
