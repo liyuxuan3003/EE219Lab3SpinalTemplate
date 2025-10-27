@@ -8,11 +8,12 @@ case class Test() extends Component {
   val io = new Bundle {
     val a = in(Bits(4 bits))
     val b = in(Bits(4 bits))
+    val i = in(Bool())
     val o = out(Bits(4 bits))
   }
 
-  val test = Reg(Bits(4 bits))
-  test := io.a | io.b
+  val test = Reg(Bits(4 bits)) init (0)
+  test := Mux(io.i, io.a | io.b, io.a & io.b)
   io.o := test
 }
 

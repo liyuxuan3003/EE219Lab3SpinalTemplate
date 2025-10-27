@@ -12,6 +12,7 @@ case class TopLevel() extends Component {
   val top = Test()
   top.io.a := io.m.switch(1)(0 to 3)
   top.io.b := io.m.switch(1)(4 to 7)
+  top.io.i := io.m.key(3)
   io.m.led(1)(0 to 3) := top.io.o
   io.m.led(1)(4 to 7) := 0
 }
