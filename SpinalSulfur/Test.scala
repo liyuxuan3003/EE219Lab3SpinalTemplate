@@ -19,7 +19,8 @@ case class Test() extends Component {
 
 object TestSim extends App {
   Config.sim.compile(Test()).doSim { dut =>
-    dut.clockDomain.forkStimulus(period = 10, resetCycles = 10)
+    dut.clockDomain.forkStimulus(period = 10, resetCycles = 9)
+    dut.clockDomain.waitRisingEdge()
 
     for (a <- 0 to 15) {
       for (b <- 0 to 15) {
