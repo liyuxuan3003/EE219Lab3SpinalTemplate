@@ -19,7 +19,8 @@ case class TopLevel() extends Component {
 
 object TopLevelSim extends App {
   Config.sim.compile(TopLevel()).doSim { dut =>
-    dut.clockDomain.forkStimulus(period = 10, resetCycles = 10)
+    dut.clockDomain.forkStimulus(period = 10, resetCycles = 9)
+    dut.clockDomain.waitRisingEdge()
 
   }
 }
