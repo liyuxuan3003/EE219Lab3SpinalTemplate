@@ -1,6 +1,6 @@
-PROJECT:=SpinalSulfur
+PROJECT:=EE219Lab3
 
-TOP:=TopLevel
+TOP:=Conv2D
 
 SRCS_XDC_EXTRA:=
 SRCS_SPINAL_EXTRA:=

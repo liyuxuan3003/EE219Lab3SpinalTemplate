@@ -1,8 +1,8 @@
 [submodule "MakefileSpinal"]
-	path = SpinalSulfur/makefile-spinal
+	path = EE219Lab3/makefile-spinal
 	url = git@github.com:liyuxuan3003/MakefileSpinal.git
 	branch = github
 [submodule "MagicLeda"]
-	path = SpinalSulfur/magicleda
+	path = EE219Lab3/magicleda
 	url = git@github.com:liyuxuan3003/MagicLeda.git
 	branch = github
