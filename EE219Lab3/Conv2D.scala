@@ -73,21 +73,14 @@ case class Conv2D(cfg: Conv2DConfig = Conv2DConfig()) extends Component {
   systol.io.rows := cfg.matrixM
   systol.io.cols := cfg.kernalK
   systol.io.length := cfg.matrixN
+  val invaild = (scycle - 1 < 0) || (scycle - 1 > cfg.matrixN - 1)
   // Generate input of w
   for (k <- 0 until cfg.kernalK) {
-    val invaildMin = (scycle - 1) < k
-    val invaildMax = (scycle - 1) > k + cfg.matrixN - 1
-    val invaild = (invaildMin) || (invaildMax)
-    val n = scycle - k - 1
-    systol.io.w(k) := invaild ? U(0) | memWeight((k + n * cfg.kernalK).resized)
+    systol.io.w(k) := invaild ? U(0) | memWeight((k + (scycle - 1) * cfg.kernalK).resized)
   }
   // Generate input of x
   for (m <- 0 until cfg.matrixM) {
-    val invaildMin = (scycle - 1) < m
-    val invaildMax = (scycle - 1) > m + cfg.matrixN - 1
-    val invaild = (invaildMin) || (invaildMax)
-    val n = scycle - m - 1
-    systol.io.x(m) := invaild ? U(0) | memInput((m + n * cfg.matrixM).resized)
+    systol.io.x(m) := invaild ? U(0) | memInput((m + (scycle - 1) * cfg.matrixM).resized)
   }
   // Remember scycle will also add 1 on the cycle after systol reset
   // This behaviour is different from cnt inside systolic
